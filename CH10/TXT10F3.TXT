@@ -1,0 +1,18 @@
+/********************************************************/
+/*  Chapter 10.  DosCreateMutexSem introduction         */
+/********************************************************/
+
+
+HMTX hmtxMySem = (HMTX)NULL;  /* Global variable where a
+                                 mutext sem is stored   */
+
+APIRET rc;               /* Local variable where an API
+                            return code is stored */
+
+rc = DosCreateMutexSem((PSZ)NULL,  /* Unnamed sem */
+           &hmtxMySem, /* Address for semaphore handle */
+           0,          /* Private semaphore */
+           FALSE);     /* Initially unowned */
+
+
+

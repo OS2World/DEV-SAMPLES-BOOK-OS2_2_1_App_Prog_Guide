@@ -1,0 +1,9 @@
+; Module definition file for C4_1.EXE
+
+NAME C4_1.EXE WINDOWCOMPAT
+
+DESCRIPTION 'Lottery Selection Program'
+
+PROTMODE
+
+

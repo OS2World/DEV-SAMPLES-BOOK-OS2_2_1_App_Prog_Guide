@@ -1,0 +1,9 @@
+
+;  Sample CID response file for NODE0001
+
+    BUFFER = 50
+
+       * Provide a little more time
+    TIMEOUT = 10
+
+

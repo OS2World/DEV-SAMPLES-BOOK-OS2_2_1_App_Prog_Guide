@@ -1,0 +1,11 @@
+;Module definition file for STOCK.DLL
+
+LIBRARY STOCK INITINSTANCE TERMINSTANCE
+DATA MULTIPLE NONSHARED
+CODE LOADONCALL
+PROTMODE
+EXPORTS
+   lowPrice @1 ; Calculate the low stock price
+   highPrice @2 ; Calculate the high stock price
+   averagePrice @3 ; Calculate the average price
+

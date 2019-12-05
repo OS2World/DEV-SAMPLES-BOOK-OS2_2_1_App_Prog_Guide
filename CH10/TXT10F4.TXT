@@ -1,0 +1,17 @@
+/**********************************************************/
+/* Chapter 10.  DosRequestMutexSem and DosReleaseMutexSem */
+/*              introduction                              */
+/**********************************************************/
+
+
+rc = DosRequestMutexSem(hmtxMySem,  /* semaphore handle */
+          SEM_INDEFINITE_WAIT);     /* Wait while in use */
+
+/* Access the resource that is being protected */
+     .
+     .
+     .
+
+rc = DosReleaseMutexSem(hmtxMySem); /* semaphore handle */
+
+

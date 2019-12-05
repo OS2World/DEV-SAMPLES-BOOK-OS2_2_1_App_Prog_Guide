@@ -1,0 +1,12 @@
+; Module definition file for C4_2.EXE
+NAME C4_2.EXE WINDOWCOMPAT
+
+; You can specify the imported functions,
+; but you don't need to since you have the C4_2D.LIB file
+; for the DLL.
+
+;IMPORTS
+;   C4_2D.lowPrice ; Calculate the low stock price
+;   C4_2D.highPrice ; Calculate the high stock price
+;   C4_2D.averagePrice ; Calculate the average price
+

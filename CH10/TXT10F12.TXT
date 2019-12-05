@@ -1,0 +1,23 @@
+/**********************************************************/
+/* Chapter 10.  Function that completely releases a mutex */
+/*              semaphore                                 */
+/**********************************************************/
+
+
+VOID ReleaseMutex(HMTX thishmtx)
+{
+   ULONG count;
+   PID processID;
+   TID threadID;
+
+   DosQueryMutexSem(thishmtx, &processID, &threadID,
+                    &count);
+   if (count > 1) {
+      /* log an error */
+   }
+   for (; count > 0; count--) {
+      DosReleaseMutexSem(thishmtx);
+   }
+}
+
+

@@ -1,0 +1,35 @@
+/*************************************************/
+/* Chapter 10.  DosCreateMuxWaitSem introduction */
+/*************************************************/
+
+HEV hevMyEvent1 = (HEV)NULL;  /* Global variable where an
+                                 event sem is stored   */
+HEV hevMyEvent2 = (HEV)NULL;  /* Global variable where an
+                                 event sem is stored   */
+HMUX hmuxMyMuxwait = (HMUX)NULL; /* Global variable where a
+                                    muxwait sem is stored */
+
+APIRET rc;               /* Local variable where an API
+                            return code is stored */
+
+SEMRECORD sr[2];
+
+rc = DosCreateEventSem((PSZ)NULL,  /* Unnamed sem */
+           &hevMyEvent1,  /* Address for semaphore handle */
+           0,             /* Private semaphore */
+           FALSE);        /* Initially set     */
+rc = DosCreateEventSem((PSZ)NULL,  /* Unnamed sem */
+           &hevMyEvent2,  /* Address for semaphore handle */
+           0,             /* Private semaphore */
+           FALSE);        /* Initially set     */
+sr[0].hsemCur = (HSEM)hevMyEvent1;
+sr[0].ulUser = 1;
+sr[1].hsemCur = (HSEM)hevMyEvent2;
+sr[1].ulUser = 2;
+rc = DosCreateMuxWaitSem((PSZ)NULL,
+           &hmuxMyMuxwait, /* Address for semaphore handle */
+           2,              /* Count of semaphore array */
+           sr,             /* Address of sem array */
+           DCMW_WAIT_ALL); /* Wait for all sems to post */
+
+

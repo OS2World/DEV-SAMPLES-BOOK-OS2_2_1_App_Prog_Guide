@@ -1,0 +1,98 @@
+The four objects created by the SOM runtime are:
+     1. The SOMObject class object: 
+        {An instance of class SOMClass at address 00220090}
+
+   2. The SOMClass class object: 
+        {An instance of class SOMClass at address 00220110}
+
+   3. The SOMClassMgr class object: 
+        {An instance of class SOMClass at address 00224010}
+
+   4. The SOMClassMgr object: 
+        {An instance of class SOMClassMgr at address 00224950}
+
+
+The three calculator-related class objects are:
+
+   5. For the "calculator" class:  
+        {An instance of class M_calculator at address 00224D90}
+
+   6. For the "fcalc" class:  
+        {An instance of class M_calculator at address 00228090}
+
+   7. For the "dumbcalc" class:  
+        {An instance of class M_calculator at address 00228410}
+
+
+
+They are descended from the following classes:
+
+   8. For the "calculator" class:  
+         The M_calculator class's parent is the SOMClass class
+
+   9. For the "fcalc" class:     
+         The M_calculator class's parent is the SOMClass class
+
+   10. For the "dumbcalc" class:  
+         The M_calculator class's parent is the SOMClass class
+
+
+The three calculator objects are:
+
+calc1:    {An instance of class calculator at address 002286B0}
+          The calculator class's parent is the SOMObject class
+
+calc2:  {An instance of class fcalc at address 002286D0}
+          The fcalc class's parent is the calculator class
+
+calc3:  {An instance of class dumbcalc at address 002286F0}
+          The dumbcalc class's parent is the fcalc class
+
+
+Results of somIsA, somIsInstanceOf, and somDescendedFrom calls:
+
+calc1 and the calculator class:
+     calc1  somIsA   "calculator" class?                Yes
+     calc1  somIsInstanceOf   "calculator"  class?      Yes
+     calc1  somDescendedFrom  "calculator"  class?      Yes
+
+calc1 and the fcalc class:
+     calc1  somIsA   "fcalc" class?                     No
+     calc1  somIsInstanceOf   "fcalc" class?            No
+     calc1  somDescendedFrom  "fcalc" class?            No
+
+calc1 and the dumbcalc class:
+     calc1  somIsA   "dumbcalc" class?                  No
+     calc1  somIsInstanceOf   "dumbcalc" class?         No
+     calc1  somDescendedFrom  "dumbcalc" class?         No
+
+calc2 and the calculator class:
+     calc2  somIsA   "calculator" class?                Yes
+     calc2  somIsInstanceOf   "calculator"     class?   No
+     calc2  somDescendedFrom  "calculator"     class?   Yes
+
+calc2 and the fcalc class:
+     calc2  somIsA   "fcalc" class?                     Yes
+     calc2  somIsInstanceOf   "fcalc" class?            Yes
+     calc2  somDescendedFrom  "fcalc" class?            Yes
+
+calc2 and the dumbcalc class:
+     calc2  somIsA   "dumbcalc" class?                  No
+     calc2  somIsInstanceOf   "dumbcalc" class?         No
+     calc2  somDescendedFrom  "dumbcalc" class?         No
+
+calc3 and the calculator class:
+     calc3  somIsA   "calculator" class?                Yes
+     calc3  somIsInstanceOf   "calculator"     class?   No
+     calc3  somDescendedFrom  "calculator"     class?   Yes
+
+calc3 and the fcalc class:
+     calc3  somIsA   "fcalc" class?                     Yes
+     calc3  somIsInstanceOf   "fcalc" class?            No
+     calc3  somDescendedFrom  "fcalc" class?            Yes
+
+calc3 and the dumbcalc class:
+     calc3  somIsA   "dumbcalc" class?                  Yes
+     calc3  somIsInstanceOf   "dumbcalc" class?         Yes
+     calc3  somDescendedFrom  "dumbcalc" class?         Yes
+

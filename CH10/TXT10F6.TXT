@@ -1,0 +1,16 @@
+/****************************************************/
+/* Chapter 10.  DosCreateEventSem introduction      */
+/****************************************************/
+
+HEV hevMyEvent = (HEV)NULL;  /* Global variable where an
+                                event sem is stored   */
+
+APIRET rc;               /* Local variable where an API
+                            return code is stored */
+
+rc = DosCreateEventSem((PSZ)NULL,  /* Unnamed sem */
+           &hevMyEvent,  /* Address for semaphore handle */
+           0,            /* Private semaphore */
+           FALSE);       /* Initially set     */
+
+

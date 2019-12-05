@@ -1,0 +1,8 @@
+; This is the message input file for component DTE
+; These messages will be stored in file SHOWDATE.MSG
+DTE
+DTE0100E: Unknown parameter %1.
+DTE0101I: Today's date is %1/%2/%3.
+DTE0102W: Watch your step its Friday the 13th.
+DTE0103H: This program displays information about todays date.
+
